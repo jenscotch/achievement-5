@@ -6,11 +6,11 @@ const Chat = ({ route, navigation }) => {
     const { name, color } = route.params;
 
     useEffect(() => {
-        navigation.setOptions({ title: name, backgroundColor: color });
+        navigation.setOptions({ title: name, color: color });
     }, []);
 
     return (
-        <View style={[styles.container]}>
+        <View style={[styles.container, {backgroundColor: color}]}>
             <Text>Hello Screen2!</Text>
         </View>
     );
