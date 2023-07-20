@@ -76,7 +76,7 @@ const Start = ({ navigation }) => {
                     style={styles.button}
                     title="Start Chatting"
                     color="#757083"
-                    onPress={() => navigation.navigate('Chat', {name: name, color: color, signInUser})}
+                    onPress={() => navigation.navigate('Chat', {name: name, color: color, signInUser: signInUser})}
                 />
             </View>
             </ImageBackground>
