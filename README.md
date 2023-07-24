@@ -1,5 +1,16 @@
 # Chat App
 
+# Installation & Set Up
+
+ - Clone the repo
+ - Navigate to project directory in the terminal
+ - Run ```npm install``` to install all necessary dependencies
+ - Use Firebase to create a new project
+ - Copy the Firebase Config object to replace the existing firebaseConfig code in App.js
+ - Enable Firestore and Storage services in your Firebase project
+ - Ensure a smartphone simulator is installed (Android Studio or XCode)
+ - Run ```expo start``` in the terminal to launch project
+
 # Objective:
 
 To build a chat app for mobile devices using React Native. The app will
