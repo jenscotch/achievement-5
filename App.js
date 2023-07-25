@@ -13,6 +13,7 @@ const Stack = createNativeStackNavigator();
 
 const App = () => {
 
+  //retrieve from Firebase console
   const firebaseConfig = {
 
     apiKey: "AIzaSyBZlY3KoJRNkfoCjD9jwUu7HEmtS_eJLhc",

@@ -11,6 +11,10 @@ const Chat = ({ route, navigation, db, isConnected, storage }) => {
     const { name, color, userID } = route.params;
     const [messages, setMessages] = useState([]);
 
+    const onSend = async (newMessages) => {
+        await addDoc(collection(db, 'messages'), newMessages[0]);
+    };
+
     useEffect(() => {
         navigation.setOptions({ title: name, color: color });
     }, []);
@@ -58,12 +62,8 @@ const Chat = ({ route, navigation, db, isConnected, storage }) => {
         }
     };
 
-    const onSend = async (newMessages) => {
-        await addDoc(collection(db, 'messages'), newMessages[0])
-    };
-
     const renderCustomActions = (props) => {
-        return <CustomActions storage={storage} {...props} />
+        return <CustomActions storage={storage} userID={userID} {...props} />
     };
 
     const renderCustomView = (props) => {
@@ -85,8 +85,8 @@ const Chat = ({ route, navigation, db, isConnected, storage }) => {
                     }}
                 />
             );
-            return null;
         }
+        return null;
     }
 
     const renderBubble = (props) => {
@@ -94,10 +94,10 @@ const Chat = ({ route, navigation, db, isConnected, storage }) => {
             {...props}
             wrapperStyle={{
                 right: {
-                    backgroundColor: '#000'
+                    backgroundColor: '#000',
                 },
                 left: {
-                    backgroundColor: '#fff'
+                    backgroundColor: '#000'
                 }
             }}
         />
@@ -113,7 +113,8 @@ const Chat = ({ route, navigation, db, isConnected, storage }) => {
                 renderCustomView={renderCustomView}
                 onSend={messages => onSend(messages)}
                 user={{
-                    name
+                    name: name,
+                    _id: userID
                 }}
             />
             { Platform.OS === 'android' ? 
