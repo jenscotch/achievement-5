@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { StyleSheet, View, KeyboardAvoidingView, Platform } from 'react-native';
-import { GiftedChat, Bubble, InputToolbar } from 'react-native-gifted-chat';
+import { GiftedChat, Bubble, InputToolbar, Day } from 'react-native-gifted-chat';
 import { collection, addDoc, onSnapshot, query, orderBy } from 'firebase/firestore';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import CustomActions from './CustomActions';
@@ -66,6 +66,11 @@ const Chat = ({ route, navigation, db, isConnected, storage }) => {
         return <CustomActions storage={storage} userID={userID} {...props} />
     };
 
+    const renderDay = (props) => {
+        return <Day {...props} textStyle={{color: 'black'}}/>
+    }
+
+
     const renderCustomView = (props) => {
         const { currentMessage } = props;
         if (currentMessage.location) {
@@ -92,12 +97,48 @@ const Chat = ({ route, navigation, db, isConnected, storage }) => {
     const renderBubble = (props) => {
         return <Bubble
             {...props}
-            wrapperStyle={{
+            timeTextStyle={{
                 right: {
-                    backgroundColor: '#000',
+                    color: 'black',
                 },
                 left: {
-                    backgroundColor: '#000'
+                    color: 'black',
+                }
+            }}
+            textStyle={{
+                right: {
+                    color: 'black',
+                },
+                left: {
+                    color: 'black',
+                }
+            }}
+            wrapperStyle={{
+                right: {
+                    backgroundColor: '#dad7cd',
+                    borderWidth: '1.5px',
+                    borderColor: '#000',
+                    shadowColor: "#000",
+                    shadowOffset: {
+	                    width: 3,
+	                    height: 3,
+                        },
+                    shadowOpacity: 1,
+                    shadowRadius: 0,
+                    elevation: 5,
+                },
+                left: {
+                    backgroundColor: '#5ca4a9',
+                    borderWidth: '1.5px',
+                    borderColor: '#000',
+                    shadowColor: "#000",
+                    shadowOffset: {
+	                    width: 3,
+	                    height: 3,
+                        },
+                    shadowOpacity: 1,
+                    shadowRadius: 0,
+                    elevation: 5,
                 }
             }}
         />
@@ -111,6 +152,7 @@ const Chat = ({ route, navigation, db, isConnected, storage }) => {
                 renderInputToolbar={renderInputToolbar}
                 renderActions={renderCustomActions}
                 renderCustomView={renderCustomView}
+                renderDay={renderDay}
                 onSend={messages => onSend(messages)}
                 user={{
                     name: name,

@@ -3,10 +3,10 @@ import { StyleSheet, View, Text, Button, TextInput, ImageBackground, TouchableOp
 import { getAuth, signInAnonymously } from 'firebase/auth';
 
 const colorThemes = {
-    one: '#090C08',
-    two: '#474056',
-    three: '#8A95A5',
-    four: '#B9C6AE',
+    one: '#dad7cd',
+    two: '#cdb4db',
+    three: '#5ca4a9',
+    four: '#d5896f',
 };
 
 
@@ -37,7 +37,7 @@ const Start = ({ navigation }) => {
                 source={require('../assets/Background-Image.png')} 
                 resizeMode='cover' 
                 style={styles.image}>
-            <Text style={styles.header}>App Title</Text>
+            <Text style={styles.header}>Chat App</Text>
             <View style={styles.inputContainer}>
                 <TextInput
                     style={styles.textInput}
@@ -112,6 +112,8 @@ const styles = StyleSheet.create({
         marginRight: 20,
         padding: '5%',
         flexBasis: 160,
+        borderWidth: 2,
+        borderColor: '#000',
     },
     textInput: {
         width: '92%',
@@ -121,8 +123,8 @@ const styles = StyleSheet.create({
         textDecorationColor: '#757083',
         opacity: 50,
         padding: 15,
-        borderWidth: 2,
-        borderColor: '#757083',
+        borderWidth: 1.5,
+        borderColor: '#000',
         marginTop: 5,
         marginBottom: 28,
     },
@@ -140,7 +142,7 @@ const styles = StyleSheet.create({
         marginBottom: 10,
     },
     selectedCircle: {
-        borderWidth: 2,
+        borderWidth: 1.5,
         borderColor: '#000',
 
     },
