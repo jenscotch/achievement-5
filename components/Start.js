@@ -37,7 +37,7 @@ const Start = ({ navigation }) => {
                 source={require('../assets/Background-Image.png')} 
                 resizeMode='cover' 
                 style={styles.image}>
-            <Text style={styles.header}>Chat App</Text>
+            <Text style={styles.header}>le chat</Text>
             <View style={styles.inputContainer}>
                 <TextInput
                     style={styles.textInput}
@@ -45,7 +45,7 @@ const Start = ({ navigation }) => {
                     onChangeText={setName}
                     placeholder='Your Name'
                 />
-                <Text style={{fontSize: 16, fontWeight: 'bold', color: '#757083', alignSelf: 'center'}}>Choose Background Color: </Text>
+                <Text style={{fontSize: 16, fontWeight: 'bold', color: '#000', alignSelf: 'center'}}>Choose Background Color: </Text>
             <View style={styles.themeSelection}>
                 <TouchableOpacity 
                     style={[
@@ -79,7 +79,7 @@ const Start = ({ navigation }) => {
                 <Button 
                     style={styles.button}
                     title="Start Chatting"
-                    color="#757083"
+                    color="#000"
                     onPress={() => {signInUser(name, color)}}
                 />
             </View>
@@ -97,23 +97,29 @@ const styles = StyleSheet.create({
     },
     header: {
         flex: 2,
-        fontSize: 45, 
-        fontWeight: 600, 
+        fontSize: 70, 
+        fontWeight: 900, 
         padding: 60,
-        color: '#fff',
+        color: '#000',
         alignSelf: 'center',
     },
     inputContainer: {
         flex: 1,
         backgroundColor: '#fff',
-        marginTop: 20,
         marginBottom: 30,
         marginLeft: 20,
         marginRight: 20,
         padding: '5%',
         flexBasis: 160,
-        borderWidth: 2,
+        borderWidth: 4,
         borderColor: '#000',
+        shadowOffset: {
+            width: 5,
+            height: 5,
+            },
+        shadowOpacity: 1,
+        shadowRadius: 0,
+        elevation: 5,
     },
     textInput: {
         width: '92%',
