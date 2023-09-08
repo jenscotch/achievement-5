@@ -1,6 +1,7 @@
 # Chat App
 
-<img width="401" alt="Screenshot 2023-08-11 at 9 59 03 AM" src="https://github.com/jenscotch/chat-app/assets/129793770/07cdd80e-2c6b-4c6b-bd8a-f683d3d98720">
+<img width="364" alt="Screenshot 2023-09-08 at 12 39 20 PM" src="https://github.com/jenscotch/chat-app/assets/129793770/822678ad-ea6a-466f-b5df-fd973522ec4e">
+
 
 <img width="401" alt="Screenshot 2023-08-11 at 10 00 28 AM" src="https://github.com/jenscotch/chat-app/assets/129793770/8a680db5-b168-4534-99a1-e2be5bd26bd1">
 
